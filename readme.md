@@ -1,11 +1,10 @@
 #  Product Identification using Deep Learning  
 
 
- **You can Run the app from here** : https://product-finder-task.herokuapp.com/
-\
-
-
-
+ **You can Run the app from here** : https://product-finder-task.herokuapp.com/ 
+ 
+ 
+---
 
 **Input To WebApp** : Upload Image from Local Machine and Submit
 ![pg1.png](/images/pg1.png) 
