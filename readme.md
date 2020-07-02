@@ -3,7 +3,7 @@
 **Input To WebApp** : Upload Image from Local Machine and Submit
 ![pg1.png](/images/pg1.png) 
 
-**Result On WebApp** : Breed Name is Displayed for Dogs and Closest breed of dog for Human inputs
+**Result On WebApp** : Product Name is dispalyed in the highlighted section.
 ![pg2.png](/images/pg2.png) 
 
 
@@ -11,42 +11,50 @@
 [Data Set Provided](/images) 
 
 
+## Challenges Faced
+**Challenge 1** : Very small dataset lead to lack of generalization.
+
+        -Solution : Using different data augmentation technique using ImgAug.
+ **Challenge 2** : All T-shirt images consisted of black colored Tshirt and augmentations such as gamma contrast, hue saturation, linear contrast etc. don't have much effect on black color.
+
+        -Solution : As the model was not generalizing on colors of shirts, This problem was solved using inversion augmentation along with other techniques.
+
 
 ## Preprocessing 
 
-I choose size as 224 * 224 for input tensor by resizing and cropping it using transform
+1. Dta augmentations can help in increase the training examples on the fly during training and help to increase the performance of architechture due to randomly indtroduced variations of the sampled examples which i have implemented here using transforms
+
+Used ImgAug to apply different transformations on the images.
+
+    - Horizontal and Vertical Flip
+    - Invert
+    - Crop and Pad
+    - Affine transformations
+    - Blur and Emboss
+    - Changing brightness and contrast
+    - changing hue and saturation levels
+    - Color Jitter
+    -Random Rotation
+    
+    ![aug.png]/images/aug.png) 
+    
+
+2. Chose size as 224 * 224 for input tensor by resizing and cropping it using transform
+
+3. Normalised the input images
 ```
-transforms.Resize(256)
-transforms.CenterCrop(224)
-```
-Yes, data augmentations can help in increase the training examples on the fly during training and help to increase the performance of architechture due to randomly indtroduced variations of the sampled examples which i have implemented here using transforms
-```
-transforms.RandomRotation(30)
-transforms.RandomResizedCrop(224)
-transforms.RandomHorizontalFlip()
-```
+transforms.Resize((224,224))
+transforms.ToTensor()
+transforms.Normalize([0.485, 0.456, 0.406],[0.229, 0.224, 0.225])
 
 
+```
 
 ## Models Used :
-  ### 1.CNN From Scratch :
-  ```
-  Net(
-  (conv1): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-  (conv2): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-  (conv3): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
-  (fc1): Linear(in_features=50176, out_features=500, bias=True)
-  (fc2): Linear(in_features=500, out_features=133, bias=True)
-  (dropout): Dropout(p=0.5)
-)
-  ```
 
-  
-   
-   ### 2. CNN with Transfer Learning : Used ResNet50 Model
-   - Frozen Layers : conv1 , bn1 , relu, maxpool, layer1, layer2, layer3, avgpool
-   - Unfrozen Layers : layer4 and fc
+   ### 1. CNN with Transfer Learning : Used ResNet50 Model
+   - Frozen Layers : conv1 , bn1 , relu, maxpool, layer1, layer2, layer3, avgpool,layer4
+   - Unfrozen Layers :  fc
         
         Residual networks is based on theory that as we go deeper, we should make sure not to degrade accuracy and so, Keep learning the residuals to match the predicted with the actual and this is acheived by mapping the identity function.
 
@@ -63,22 +71,29 @@ transforms.RandomHorizontalFlip()
         ReLU activation is used as it's the most proven activation function for classification problems as it introduces good and right amount of non linearity with less chances of vanishing gradient problem ! Batch normalization helped in making the network more stable and   learning faster thereby faster convergence. Maxpooling helped in downsampling high number of parameters created by producing higher dimensional feature maps after convolution operation and thus selecting only relevant features from the high dimensioned feature matrix.
 
    **Last Layer is Modified as follows :**
-        Linear(in_features=2048, out_features=512) Linear(in_features=512, out_features=133) with ReLU activations between the linears.
-        I choose to first only train *layer4* and *fc* and then i unfroze one more layer *layer3* which increased the accuracy and decreased the validation losses.
+          ```
+          Linear(in_features=2048, out_features=512) 
+          nn.Linear(516,64)
+          nn.Linear(64,3)
+          ```
+       
+with ReLU activations between the linears.
+    
  ``` 
   Optimiser : SGD
  Loss Function : CrossEntropyLoss()
  ```
 ## Results
-CNN from scratch acheived very low accuracy but when we used a pretrained model like ResNet wih tranfer learning , results were very good.
+
 
 ```
-Test Loss: 0.343228
+Test Loss: 0.518940
 
-Test Accuracy: 89% (747/836)
+Test Accuracy: 100% ( 5/ 5)
 ```
-![re1.png](/images/re1.png) 
-![re2.png](/images/re2.png) 
+![res1.png](/images/res1.png) 
+![res2.png](/images/res2.png) 
+![res3.png](/images/res3.png) 
 
 ## Deployment
 I used Flask to deploy my trained model 
@@ -86,10 +101,7 @@ I used Flask to deploy my trained model
  - Passing the test image through trained model is done in **_inference.py_**
 
 
-## References
-- [How to Deploy model using Flask](https://heartbeat.fritz.ai/brilliant-beginners-guide-to-model-deployment-133e158f6717)
-- [Loss Functions and Optimizers](https://medium.com/data-science-group-iitr/loss-functions-and-optimization-algorithms-demystified-bb92daff331c)
-- [How ResNet works](https://medium.com/@pierre_guillou/understand-how-works-resnet-without-talking-about-residual-64698f157e0c)
+
 
 
 
