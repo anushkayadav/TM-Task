@@ -6,6 +6,24 @@
  
 ---
 
+## Approaches
+
+1.  Approach 1 : 
+
+	*	Used the dataset of 20 images that was provided for the task
+	* applied varous augmentation techniques and developed my model 
+	*	This was the most **challenging approch** as dealing with very small datasets is a difficult task. 
+	*	 Achieved Test loss of 0.32 and was able to classify most the products properly.
+	*	 **Deployed the Webapp of this approach** and it can be accessed by the link given above.
+
+2.  Approach 2 :
+
+	*  Scraped images from google and constructed my own dataset along with the given images and classes.
+	*	 Applied Augmentation techniques and developed my model.
+	*	 Achieved better results as class images were very diverse and more in number than the previous case.  
+
+---
+
 **Input To WebApp** : Upload Image from Local Machine and Submit
 ![pg1.png](/images/pg1.png) 
 
@@ -20,7 +38,7 @@ The Provided dataset had 20 images in total.
 
 ## Classes : 
 I have considered 3 classes - 
-  - Kurti
+  - Kurti (Kurti with Leggings and Kurti with Palazzo Pants were taken in one class as they are very similar)
   - Saree
   - Shirt
 
