@@ -7,12 +7,20 @@
 ![pg2.png](/images/pg2.png) 
 
 
-## Dataset Used :    
+## Dataset Used : 
+The Provided dataset had 20 images in total.
+10 images of kurti , 4 images of shirt and 6 images of saree.   
 [Data Set Provided](/images) 
+
+## Classes : 
+I have considered 3 classes - 
+  - Kurti
+  - Saree
+  - Shirt
 
 
 ## Challenges Faced
-**Challenge 1** : Very small dataset lead to lack of generalization.
+**Challenge 1** : Very small dataset leading to lack of generalization.
 
         -Solution : Using different data augmentation technique using ImgAug.
  **Challenge 2** : All T-shirt images consisted of black colored Tshirt and augmentations such as gamma contrast, hue saturation, linear contrast etc. don't have much effect on black color.
@@ -36,7 +44,7 @@ Used ImgAug to apply different transformations on the images.
     - Color Jitter
     -Random Rotation
     
-  ![aug.png](/images/aug.png) 
+![aug.png](/images/aug.png) 
 
 
 2. Chose size as 224 * 224 for input tensor by resizing and cropping it using transform
@@ -100,6 +108,11 @@ I used Flask to deploy my trained model
  - importing the model with checkpoints and transforming image to get tensor done in **_commons.py file._**
  - Passing the test image through trained model is done in **_inference.py_**
 
+##  Occlusion Heat Map
+Visualizing what CNN is learning using Occlusion technique. 
+![heat.png](/images/heat.PNG) 
+
+Investigating which part of the image some classification prediction is coming from is by plotting the probability of the class of interest as a function of the position of an occluder object. That is, we iterate over regions of the image, set a patch of the image to be all zero, and look at the probability of the class.
 
 
 
