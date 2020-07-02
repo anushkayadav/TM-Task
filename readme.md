@@ -26,7 +26,12 @@ I have considered 3 classes -
  **Challenge 2** : All T-shirt images consisted of black colored Tshirt and augmentations such as gamma contrast, hue saturation, linear contrast etc. don't have much effect on black color.
 
         -Solution : As the model was not generalizing on colors of shirts, This problem was solved using inversion augmentation along with other techniques.
+  **Challenge 3** :  Facial feaures of Men and Women were affecting the model as only Men wore shirts and Women wore Saree and Kurti.
 
+        -Solution : Resizing and Centre Cropping the Images make sure in most of the cases that facial feature don't affect the model.
+ 
+
+     
 
 ## Preprocessing 
 
