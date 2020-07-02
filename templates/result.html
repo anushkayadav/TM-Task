@@ -1,0 +1,66 @@
+
+	
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title> APP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/main1.css') }}" />
+		<style type="text/css">
+			.here{
+				font-size: 30px;
+				font-weight: 400;
+				font-style: italic;
+				background-color: rgba(0, 212, 113, 0.2);
+				padding: 0px;
+				margin: 0px;
+			}
+
+		</style>
+
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen ">
+						<div class="content">
+							<h1 style="font-size: 70px">Product Prediction</h1>
+							<p class="major" style="padding: 1px; margin: 1px">Predicted Product is </p>
+							<span class="here"> {{ flower }} </span>
+							
+
+						
+							  
+							
+						</div>
+						<div class="image">
+							<img src="{{ url_for('static',filename='images/tick.gif') }}" alt="" />
+						</div>
+					</section>
+
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								Find the Code and Documentation on GitHub :)
+								<li><a href="https://github.com/anushkayadav/Dog-Breed-Classifier-WebApp" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								
+							</ul>
+							
+						</div>
+					</footer>
+
+			</div>
+
+
+			
+
+	</body>
+</html>

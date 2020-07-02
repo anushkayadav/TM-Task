@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<!--<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/noscript.css') }}">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">-->
+
+<html>
+	<head>
+		<title>APP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='assets/css/main1.css') }}" />
+
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen ">
+						<div class="content">
+							<h1>Product Finder</h1>
+							<p class="major">Upload the Image from your local Machine to find the closest product name </p>
+							<ul class="actions stacked">
+								<form method ='post' enctype=multipart/form-data>
+								<li>
+									<input  type="file" name="file" value='upload image'>
+								</li>
+								<br>
+
+
+								<input class="button big wide smooth-scroll-middle" type="submit" value="upload">
+								
+							</ul>
+						</div>
+						<div class="image">
+							
+							<img src="{{ url_for('static',filename='images/h2.jpg') }}" alt="" />
+						</div>
+					</section>
+
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<ul class="icons">
+								Find the Code and Documentation on GitHub :)
+								<li><a href="https://github.com/anushkayadav/Dog-Breed-Classifier-WebApp" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								
+							</ul>
+							
+						</div>
+					</footer>
+
+			</div>
+
+
+			
+
+	</body>
+</html>
