@@ -36,8 +36,8 @@ Used ImgAug to apply different transformations on the images.
     - Color Jitter
     -Random Rotation
     
-    ![aug.png]/images/aug.PNG) 
-    
+  ![aug.png](/images/aug.png) 
+
 
 2. Chose size as 224 * 224 for input tensor by resizing and cropping it using transform
 
@@ -91,9 +91,9 @@ Test Loss: 0.518940
 
 Test Accuracy: 100% ( 5/ 5)
 ```
-![res1.png](/images/res1.png) 
-![res2.png](/images/res2.png) 
-![res3.png](/images/res3.png) 
+![res1.png](/images/res1.PNG) 
+![res2.png](/images/res2.PNG) 
+![res3.png](/images/res3.PNG) 
 
 ## Deployment
 I used Flask to deploy my trained model 
