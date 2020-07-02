@@ -95,7 +95,7 @@ with ReLU activations between the linears.
 
 
 ```
-Test Loss: 0.518940
+Test Loss: 0.32
 
 Test Accuracy: 100% ( 5/ 5)
 ```
