@@ -44,7 +44,7 @@ Used ImgAug to apply different transformations on the images.
     - Color Jitter
     -Random Rotation
     
-![aug.png](/images/aug.png) 
+![aug.png](/images/aug.PNG) 
 
 
 2. Chose size as 224 * 224 for input tensor by resizing and cropping it using transform
