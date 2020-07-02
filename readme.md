@@ -30,7 +30,7 @@ I have considered 3 classes -
 
 ## Preprocessing 
 
-1. Dta augmentations can help in increase the training examples on the fly during training and help to increase the performance of architechture due to randomly indtroduced variations of the sampled examples which i have implemented here using transforms
+1. Data augmentations can help in increase the training examples on the fly during training and help to increase the performance of architechture due to randomly indtroduced variations of the sampled examples which i have implemented here using transforms
 
 Used ImgAug to apply different transformations on the images.
 
