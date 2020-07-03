@@ -37,4 +37,4 @@ Test Accuracy: 83% (137/165)
 
 
 ##  Occlusion Heat Map
-
+![heat2.png](/images/heat2.PNG)
