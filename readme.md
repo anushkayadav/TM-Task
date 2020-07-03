@@ -4,7 +4,17 @@
  **You can Run the app from here** : https://product-finder-task.herokuapp.com/ 
  
  
+
 ---
+
+**Input To WebApp** : Upload Image from Local Machine and Submit
+![pg1.png](/images/pg1.png) 
+
+**Result On WebApp** : Product Name is dispalyed in the highlighted section.
+![pg2.png](/images/pg2.png) 
+
+
+
 
 ## Approaches
 
@@ -22,16 +32,8 @@
 	*	 Applied Augmentation techniques and developed my model.
 	*	 Achieved better results on testing as class images were very diverse and more in number than the previous case.  
 
----
 
-**Input To WebApp** : Upload Image from Local Machine and Submit
-![pg1.png](/images/pg1.png) 
-
-**Result On WebApp** : Product Name is dispalyed in the highlighted section.
-![pg2.png](/images/pg2.png) 
-
-
-# Appraoch 1
+# Approach 1
 
 ## Dataset Used : 
 The Provided dataset had 20 images in total.
@@ -146,7 +148,7 @@ Visualizing what CNN is learning using Occlusion technique.
 Investigating which part of the image some classification prediction is coming from is by plotting the probability of the class of interest as a function of the position of an occluder object. That is, we iterate over regions of the image, set a patch of the image to be all zero, and look at the probability of the class.
 
 
-### Aprroch2
+### Approach 2
 [Click Here](/approach2.md) 
 
 
