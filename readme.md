@@ -146,7 +146,8 @@ Visualizing what CNN is learning using Occlusion technique.
 Investigating which part of the image some classification prediction is coming from is by plotting the probability of the class of interest as a function of the position of an occluder object. That is, we iterate over regions of the image, set a patch of the image to be all zero, and look at the probability of the class.
 
 
-
+### Aprroch2
+[Click Here](/approach2.md) 
 
 
         
