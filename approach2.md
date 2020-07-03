@@ -1,4 +1,4 @@
-# Appraoch 2
+# Approach 2
 
 ## Dataset Used 
   - Scraped images from google using Javascript and Python Scripts
